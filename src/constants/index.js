@@ -33,9 +33,9 @@ export const TEMP_UPLOAD_DIR = path.join(process.cwd(), 'temp');
 export const UPLOAD_DIR = path.join(process.cwd(), 'uploads');
 
 export const CLOUDINARY = {
-  CLOUD_NAME: 'CLOUD_NAME',
-  CLOUD_API_KEY: 'API_KEY',
-  CLOUD_API_SECRET: 'API_SECRET',
+  CLOUD_NAME: 'CLOUDINARY_CLOUD_NAME',
+  API_KEY: 'CLOUDINARY_API_KEY',
+  API_SECRET: 'CLOUDINARY_API_SECRET',
 };
 
 export const FEATURE = {
