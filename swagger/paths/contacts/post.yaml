@@ -12,12 +12,6 @@ requestBody:
     multipart/form-data:
       schema:
         type: object
-        required:
-          - name
-          - age
-          - gender
-          - avgMark
-          - parentId
         properties:
           name:
             description: "Contacts name"
