@@ -12,23 +12,7 @@ requestBody:
     multipart/form-data:
       schema:
         type: object
-        properties:
-          name:
-            description: "Contacts name"
-            type: string
-            example: 'John Doe'
-          age:
-            description: "Contacts age"
-            type: number
-            example: 12
-          gender:
-            description: "Contacts gender"
-            type: string
-            enum: ['male', 'female', 'other']
-          photo:
-            description: "Contact photo"
-            type: string
-            format: binary
+        
 responses:
   '201':
     description: Creates a contact
