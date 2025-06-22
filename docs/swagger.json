@@ -89,9 +89,32 @@
                       "example": "Successfully found contacts!"
                     },
                     "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/contact"
+                      "type": "object",
+                      "required": [
+                        "contacts",
+                        "total",
+                        "page",
+                        "limit"
+                      ],
+                      "properties": {
+                        "contacts": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/contact"
+                          }
+                        },
+                        "total": {
+                          "type": "integer",
+                          "example": 35
+                        },
+                        "page": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "example": 10
+                        }
                       }
                     }
                   }
@@ -408,8 +431,11 @@
           "_id",
           "name",
           "phoneNumber",
+          "email",
           "isFavourite",
-          "contactType"
+          "contactType",
+          "createdAt",
+          "updatedAt"
         ],
         "properties": {
           "_id": {
@@ -446,10 +472,17 @@
               "personal"
             ]
           },
-          "photo": {
-            "description": "URL to contact's photo",
+          "createdAt": {
+            "description": "Contact creation timestamp",
             "type": "string",
-            "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+            "format": "date-time",
+            "example": "2024-06-20T12:00:00.000Z"
+          },
+          "updatedAt": {
+            "description": "Contact last updated timestamp",
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-06-21T10:30:00.000Z"
           }
         }
       }
